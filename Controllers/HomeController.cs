@@ -6,23 +6,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CIV.Models;
-using Microsoft.Extensions.Configuration;
 
 namespace CIV.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IConfiguration configuration;
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-        public HomeController(IConfiguration config)
-        {
-            configuration = config;
-        }
+
         public IActionResult InicioSesion()
         {
             return View();
